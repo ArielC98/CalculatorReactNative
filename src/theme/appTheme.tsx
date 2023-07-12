@@ -2,39 +2,32 @@ import { StyleSheet } from "react-native";
 
 
 export const styles = StyleSheet.create({
-  fondo:{
-    flex:1,
-    backgroundColor:'black',
-    paddingHorizontal:10,
+  fondo: {
+    flex: 1,
+    backgroundColor: 'black',
+    paddingHorizontal: 10,
   },
-  calculadoraContainer:{
-    flex:1,
-    paddingHorizontal:20,
+  calculadoraContainer: {
+    flex: 1,
+    paddingHorizontal: 20,
     // backgroundColor:'red',
-    justifyContent:'flex-end'
+    justifyContent: 'flex-end'
   },
-  resultado:{
-    color:'white',
-    fontSize:60,
-    textAlign:'right',
+  resultado: {
+    color: 'white',
+    fontSize: 60,
+    textAlign: 'right',
   },
-  resultadoPequeno:{
-    color:'rgba(255,255,255,0.5)',
-    fontSize:30,
-    textAlign:'right'
+  resultadoPequeno: {
+    color: 'rgba(255,255,255,0.5)',
+    fontSize: 30,
+    textAlign: 'right'
   },
-  boton:{
-    height:80,
-    width:80,
-    backgroundColor:'#9B9B9B',
-    borderRadius:100,
-    justifyContent:'center'
+  fila: {
+    flexDirection:'row',
+    justifyContent:'center',
+    marginBottom:18,
+    paddingHorizontal:10
   },
-  botonTexto:{
-    textAlign:'center',
-    padding:10,
-    fontSize:30,
-    color:'black',
-    fontWeight:'400'
-  }
+  
 });
