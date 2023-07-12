@@ -5,11 +5,14 @@ interface Props {
   texto: string;
   colorFondo?: string;
   ancho?: boolean;
+  accion: (numeroTexto: string) => void;
 }
 
-export const BotonCalc = ({ texto, colorFondo = "#2D2D2D", ancho = false }: Props) => {
+export const BotonCalc = ({ texto, colorFondo = "#2D2D2D", ancho = false, accion }: Props) => {
   return (
-    <TouchableOpacity>
+    <TouchableOpacity
+      onPress={() => accion(texto)}
+    >
       <View style={{
         ...styles.boton,
         backgroundColor: colorFondo,
@@ -17,7 +20,9 @@ export const BotonCalc = ({ texto, colorFondo = "#2D2D2D", ancho = false }: Prop
       }}>
         <Text style={{
           ...styles.botonTexto,
-          color: (colorFondo === "#9B9B9B" ? "black" : "white")
+          color: (colorFondo === "#9B9B9B" ? "black" : "white"),
+          textAlign:(ancho?'left':'center'),
+          marginLeft:(ancho?22:0)
         }}>{texto}</Text>
       </View>
     </TouchableOpacity>
