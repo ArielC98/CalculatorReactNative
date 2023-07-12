@@ -13,14 +13,49 @@ export const CalculadoraScreen = () => {
   }
 
   const armarNumero = (numeroTexto: string) => {
-    setNumero(numero + numeroTexto)
+    // No aceptar doble punto
+    if (numero.includes('.') && numeroTexto === '.') return;
+
+    if (numero.startsWith('0') || numero.startsWith('-0')) {
+      //Punto decimal
+      if (numeroTexto === '.') {
+        setNumero(numero + numeroTexto);
+      }
+      //Evaluar si es otro cero y hay un punto
+      else if (numeroTexto === '0' && numero.includes('.')) {
+        setNumero(numero + numeroTexto);
+      }
+      //Evaluar si es diferente de 0 y no tiene un punto
+      else if (numeroTexto !== '0' && !numero.includes('.')) {
+        setNumero(numeroTexto);
+      }
+      //Evitar 000.0
+      else if (numeroTexto === '0' && !numero.includes('.')){
+        setNumero(numero);
+      }
+      else{
+        setNumero(numero + numeroTexto);
+      }
+    }
+    else {
+      setNumero(numero + numeroTexto);
+    }
+  }
+
+  const cambiarSigno = () => {
+    if (numero.includes('-')) {
+      setNumero(numero.replace('-', ''));
+    }
+    else {
+      setNumero('-' + numero);
+    }
   }
 
   return (
     <View style={styles.calculadoraContainer}>
 
       <Text style={styles.resultadoPequeno}>{numeroAnterior}</Text>
-      <Text 
+      <Text
         style={styles.resultado}
         numberOfLines={1}
         adjustsFontSizeToFit
@@ -29,7 +64,7 @@ export const CalculadoraScreen = () => {
       <View style={styles.fila}>
         {/* Boton */}
         <BotonCalc texto="C" colorFondo="#9B9B9B" accion={limpiar} />
-        <BotonCalc texto="+/-" colorFondo="#9B9B9B" accion={limpiar} />
+        <BotonCalc texto="+/-" colorFondo="#9B9B9B" accion={cambiarSigno} />
         <BotonCalc texto="del" colorFondo="#9B9B9B" accion={limpiar} />
         <BotonCalc texto="÷" colorFondo='#FF9427' accion={limpiar} />
       </View>
