@@ -11,38 +11,38 @@ export const CalculadoraScreen = () => {
 
       <View style={styles.fila}>
         {/* Boton */}
-        <BotonCalc texto="C" color="#9B9B9B"/>
-        <BotonCalc texto="+/-" color="#9B9B9B"/>
-        <BotonCalc texto="del" color="#9B9B9B"/>
-        <BotonCalc texto="÷" color='#FF9427'/>
-      </View>
-      <View style={styles.fila}>
-        {/* Boton */}
-        <BotonCalc texto="1" />
-        <BotonCalc texto="2" />
-        <BotonCalc texto="3" />
-        <BotonCalc texto="×" color='#FF9427'/>
-      </View>
-      <View style={styles.fila}>
-        {/* Boton */}
-        <BotonCalc texto="4" />
-        <BotonCalc texto="5" />
-        <BotonCalc texto="6" />
-        <BotonCalc texto="−" color='#FF9427'/>
+        <BotonCalc texto="C" colorFondo="#9B9B9B"/>
+        <BotonCalc texto="+/-" colorFondo="#9B9B9B"/>
+        <BotonCalc texto="del" colorFondo="#9B9B9B"/>
+        <BotonCalc texto="÷" colorFondo='#FF9427'/>
       </View>
       <View style={styles.fila}>
         {/* Boton */}
         <BotonCalc texto="7" />
         <BotonCalc texto="8" />
         <BotonCalc texto="9" />
-        <BotonCalc texto="+" color='#FF9427'/>
+        <BotonCalc texto="×" colorFondo='#FF9427'/>
+      </View>
+      <View style={styles.fila}>
+        {/* Boton */}
+        <BotonCalc texto="6" />
+        <BotonCalc texto="5" />
+        <BotonCalc texto="4" />
+        <BotonCalc texto="−" colorFondo='#FF9427'/>
+      </View>
+      <View style={styles.fila}>
+        {/* Boton */}
+        <BotonCalc texto="1" />
+        <BotonCalc texto="2" />
+        <BotonCalc texto="3" />
+        <BotonCalc texto="+" colorFondo='#FF9427'/>
       </View>
       <View style={styles.fila}>
         {/* Boton */}
         {/*Una propiedad booleana se envia como true si no se le pasa un valor. Es propio de React*/}
         <BotonCalc texto="0" ancho/> 
         <BotonCalc texto="." />
-        <BotonCalc texto="=" color='#FF9427'/>
+        <BotonCalc texto="=" colorFondo='#FF9427'/>
       </View>
       
     </View>
