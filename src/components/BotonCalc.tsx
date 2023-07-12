@@ -1,19 +1,26 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 
 interface Props {
   texto: string;
   color?: string;
+  ancho?: boolean;
 }
 
-export const BotonCalc = ({ texto, color="#2D2D2D" }: Props) => {
+export const BotonCalc = ({ texto, color = "#2D2D2D", ancho = false }: Props) => {
   return (
-    <View style={{
-      ...styles.boton,
-      backgroundColor: color
-    }}>
-      <Text style={styles.botonTexto}>{texto}</Text>
-    </View>
+    <TouchableOpacity>
+      <View style={{
+        ...styles.boton,
+        backgroundColor: color,
+        width: (ancho ? 180 : 80)
+      }}>
+        <Text style={{
+          ...styles.botonTexto,
+          color: (color === "#9B9B9B" ? "black" : "white")
+        }}>{texto}</Text>
+      </View>
+    </TouchableOpacity>
   )
 }
 
@@ -23,7 +30,7 @@ const styles = StyleSheet.create({
   boton: {
     height: 80,
     width: 80,
-    borderRadius:100,
+    borderRadius: 100,
     justifyContent: 'center',
     marginHorizontal: 8
   },
