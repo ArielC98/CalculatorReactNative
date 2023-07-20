@@ -105,6 +105,7 @@ android {
 
 dependencies {
     // The version of react-native is set by the React Native Gradle Plugin
+    
     implementation("com.facebook.react:react-android")
 
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}")
@@ -118,6 +119,7 @@ dependencies {
     } else {
         implementation jscFlavor
     }
+    implementation project(':react-native-splash-screen')
 }
 
 apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesAppBuildGradle(project)
