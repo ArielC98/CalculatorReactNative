@@ -4,6 +4,9 @@ import SplashScreen from 'react-native-splash-screen'
 import { styles } from '../theme/appTheme';
 import { BotonCalc } from '../components/BotonCalc'
 import { useCalculadora } from '../hooks/useCalculadora';
+import { BannerAd, TestIds, BannerAdSize } from 'react-native-google-mobile-ads';
+
+const adUnitId = __DEV__ ? TestIds.BANNER : '	ca-app-pub-3940256099942544/6300978111';
 
 
 export const CalculadoraScreen = () => {
@@ -11,9 +14,9 @@ export const CalculadoraScreen = () => {
   const { numero, numeroAnterior, limpiar, cambiarSigno, calcular, btnDelete, btnDividir, btnMultiplicar, btnRestar, btnSumar, armarNumero } = useCalculadora();
 
 
-  useEffect(()=>{
+  useEffect(() => {
     SplashScreen.hide();
-  },[])
+  }, [])
 
   return (
     <View style={styles.calculadoraContainer}>
@@ -61,7 +64,19 @@ export const CalculadoraScreen = () => {
         <BotonCalc texto="." accion={armarNumero} />
         <BotonCalc texto="=" colorFondo='#FF9427' accion={calcular} />
       </View>
-
+      <View
+        style={{
+          alignItems:'center'
+        }}
+      >
+        <BannerAd
+          unitId={adUnitId}
+          size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
+          requestOptions={{
+            requestNonPersonalizedAdsOnly: true,
+          }}
+        />
+      </View>
     </View>
   )
 }

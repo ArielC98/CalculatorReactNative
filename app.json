@@ -1,4 +1,8 @@
 {
   "name": "calculadora",
-  "displayName": "calculadora"
+  "displayName": "calculadora",
+  
+  "react-native-google-mobile-ads": {
+    "android_app_id": "ca-app-pub-8998020764489692~4947162892"
+  }
 }
