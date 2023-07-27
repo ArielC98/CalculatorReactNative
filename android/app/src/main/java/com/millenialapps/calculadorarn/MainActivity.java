@@ -1,4 +1,5 @@
-package com.calculadora;
+// package com.calculadora;
+package com.millenialapps.calculadorarn;
 import android.os.Bundle;
 import com.facebook.react.ReactActivity;
 import org.devio.rn.splashscreen.SplashScreen;
